@@ -5,9 +5,9 @@ phases:
     commands:
       - cd server
       - echo for installing serverless
-      - yarn install -g serverless
+      - yarn add -g serverless
       - echo for local serverless developement
-      - yarn install -D serverless-offline
+      - yarn add -D serverless-offline
       - cd ../client
       - yarn install
 
