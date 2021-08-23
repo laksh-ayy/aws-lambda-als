@@ -11,6 +11,7 @@ phases:
       - echo for installing serverless
       - cd server
       - yarn global add serverless
+      - yarn install
       - echo for local serverless developement
       - cd ../client
       - yarn install
