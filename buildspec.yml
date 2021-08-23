@@ -12,14 +12,13 @@ phases:
       - cd server
       - yarn global add serverless
       - echo for local serverless developement
-      - yarn add -D serverless-offline
       - cd ../client
       - yarn install
 
   build:
     commands:
-      - yarn run build
       - pwd
+      - yarn run build
       - echo Build complete of client
       - cd ../server
       - sls config credentials --provider aws --key AKIA2UHGJELXPBFI2KQU --secret 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 -o
