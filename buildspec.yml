@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install: 
+    commands:
+      - cd server
+      - echo for installing serverless
+      - yarn install -g serverless
+      - echo for local serverless developement
+      - yarn install -D serverless-offline
+      - cd ../client
+      - yarn install
+
+  build:
+    commands:
+      - yarn run build
+      - pwd
+      - echo Build complete of client
+      - cd ../server
+      - sls config credentials --provider aws --key AKIA2UHGJELXPBFI2KQU --secret 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 -o
+      - sls deploy
+      - echo deployed
+
+artifacts:
+  files: 
+    - "**/*"
+  discard-paths: no
+  base-directory: client/build
+
+role: arn:aws:iam::730627384046:user/serverless-admin
